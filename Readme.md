@@ -1,11 +1,11 @@
 # ESP32 Bluetooth BLE Framework
-This project is a framework for an ESP32 to use an inexpensive hand-held Bluetooth BLE joystick. The joystick is readily available on the Internet for less than $20.00 or from your local fiveBELoW store for $5.00. The code provided was written for the Arduino IDE Ver 1.8.5 with the ESP32 addon. 
+This project is a framework for an ESP32 to use an inexpensive hand-held Bluetooth BLE joystick. The joystick is readily available on the Internet for less than $20.00 or from your local fiveBELoW store for $5.00. The code provided was written for the Arduino IDE Ver 1.8.5 with the ESP32 addon.
 
 # Instalation and Setup of the Arduino IDE
 There are numerous web sites with detailed instructions for installing the Arduino IDE and the ESP32 addon. I am not going to attempt to repeat that information here. Google it and follow the directions.
 
 # About the Framework
-The framework is an adaptation of a BLE client example published by IoT Sharing (http://www.iotsharing.com/2017/07/how-to-use-arduino-esp32-ble-as-gatt-client.html). You can study this code to get an idea of how BLE works. Expressif has a complete example for a GATT BLE client and explains the operation in detail (not written for Arduino IDE). You can get it here: https://github.com/espressif/esp-idf/blob/9a98535/examples/bluetooth/gatt_client/tutorial/Gatt_Client_Example_Walkthrough.md.
+This has been completely rewritten and is now based on Neil Kolban's BLE example code for a BLE Client. The original code is included in the Arduino ESP32 addon. I have modified the example code to work with the VRBOX device. The joystick and all six buttons are working. Ignore the GATT-VRBOX-Tasks folder and all the files in it. They no longer work due to changes made by Expressif in the ESP32 SDK. Use the BLE-VRBOX.ino file. This file will compile and run without problems usin Arduino 1.8.12 or later. You must also use the ESP32 addon provided by Expressif
 
 I am calling this a framework because it provides all of the ESP32 code to do the Bluetooth communications with the joystick device. You will have to fill in what to do with the data received from the joystick device.
 

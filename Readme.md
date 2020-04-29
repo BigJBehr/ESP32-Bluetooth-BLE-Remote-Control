@@ -4,8 +4,12 @@ This project is a framework for an ESP32 to use an inexpensive hand-held Bluetoo
 # Instalation and Setup of the Arduino IDE
 There are numerous web sites with detailed instructions for installing the Arduino IDE and the ESP32 addon. I am not going to attempt to repeat that information here. Google it and follow the directions.
 
+# Instalation of ESP32 BLE Library by Neil Kolban
+if you get; undefined reference to `BLERemoteService::getCharacteristicsByHandle() on compilation. then Use this link to get the library; https://github.com/nkolban/ESP32_BLE_Arduino
+Download as a zip file and then use the Arduino Libray Manager to install the zip library.
+
 # About the Framework
-This has been completely rewritten and is now based on Neil Kolban's BLE example code for a BLE Client. The original code is included in the Arduino ESP32 addon. I have modified the example code to work with the VRBOX device. The joystick and all six buttons are working. Ignore the GATT-VRBOX-Tasks folder and all the files in it. They no longer work due to changes made by Expressif in the ESP32 SDK. Use the BLE-VRBOX.ino file. This file will compile and run without problems usin Arduino 1.8.12 or later. You must also use the ESP32 addon provided by Expressif
+This has been completely rewritten and is now based on Neil Kolban's BLE example code for a BLE Client. The original code is included in the Arduino ESP32 addon. I have modified the example code to work with the VRBOX device. The joystick and all six buttons are working. Ignore the GATT-VRBOX-Tasks folder and all the files in it. They no longer work due to changes made by Expressif in the ESP32 SDK. Use the BLE-VRBOX.ino file. This file will compile and run without problems using Arduino 1.8.12 or later. You must also use the ESP32 addon provided by Expressif or the ESP32 BLE Library by Neil Kolban.
 
 I am calling this a framework because it provides all of the ESP32 code to do the Bluetooth communications with the joystick device. You will have to fill in what to do with the data received from the joystick device.
 

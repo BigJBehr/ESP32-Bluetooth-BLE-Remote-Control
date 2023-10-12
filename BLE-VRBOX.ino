@@ -249,9 +249,12 @@ class MyClientCallback : public BLEClientCallbacks
 
 //******************************************************************************
 // Connect to a service, register for notifications from Report Characteristics.
+// Returns `true` if at least one callback has been registered.
 //******************************************************************************
 bool setupCharacteristics(BLERemoteService* pRemoteService, NotifyCallback pNotifyCallback)
 {
+
+  bool have_notifications = false;
   // get all the characteristics of the service using the handle as the key
   pmapbh = pRemoteService->getCharacteristicsByHandle();
   
@@ -276,6 +279,7 @@ bool setupCharacteristics(BLERemoteService* pRemoteService, NotifyCallback pNoti
 
         sprintf(bfr, "Callback registered for: Handle: 0x%08X, %d", itrbh->first, itrbh->first);
         Serial.println(bfr);
+        have_notifications = true;
       }
       else
       {
@@ -288,6 +292,7 @@ bool setupCharacteristics(BLERemoteService* pRemoteService, NotifyCallback pNoti
         Serial.println(bfr);
     }
   } //  for
+  return have_notifications;
 } // setupCharacteristics
  
 //******************************************************************************
@@ -337,6 +342,7 @@ bool connectToServer()
   }
 
   connected = true;
+  return connected;
 } //  connectToServer
 
 //******************************************************************************
